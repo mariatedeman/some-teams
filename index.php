@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/components/header.php';
+require_once __DIR__ . '/recources/data.php';
 
 ?>
 
@@ -9,19 +10,21 @@ require_once __DIR__ . '/components/header.php';
 </div>
 
 <div class="teams">
-    <div>
-        <h3>TEAM</h3>
-    </div>
 
-    <div>
-        <h3>TEAM</h3>
-    </div>
+    <?php
+    foreach ($teams as $team) :
+    ?>
 
-    <div>
-        <h3>TEAM</h3>
-    </div>
+        <div>
+            <img src=" <?= $team['logo'] ?> ">
+            <h3>
+                <?= $team['city'] ?>
+            </h3>
+        </div>
 
-
+    <?php
+    endforeach;
+    ?>
 
 </div>
 
