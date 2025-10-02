@@ -104,13 +104,19 @@ h2, h3, h4, h5, h6 {
     margin: 20px;
     padding: 8px;
 
-    width: 30%;
-    height: 350px;
+    width: 20%;
+    height: auto;
 
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+}
+
+.teams-box:hover {
+
+    box-shadow: 0px 0px 30px 1px
 
 }
 
@@ -129,5 +135,56 @@ h2, h3, h4, h5, h6 {
 .teams-logo img {
     max-height: 100%;
     max-width: 100%;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .teams-box {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .teams-box {
+        width: 25%;
+    }
+
+    .button-primary {
+        padding: 5px 10px 5px 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .teams-box {
+        width: 25%;
+    }
+
+
+@media only screen and (min-width: 1200px) {
+
+    .teams-box {
+        width: 20%;
+    }    
+
+    .button-primary {
+
+    padding: 15px 45px 15px 45px;
+    margin: 10px;
+
+    }
 
 }
