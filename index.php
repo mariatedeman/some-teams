@@ -5,6 +5,9 @@ require_once __DIR__ . '/recources/data.php';
 
 ?>
 
+<div>
+    <img class="header-img" src="/assets/champions-league-winners_q9l8bkoy.avif" alt="Arsenal celebrates their Champions League win 2025.">
+</div>
 
 <div class="one-clmn-grey">
     <p>Presentation</p>
@@ -24,7 +27,7 @@ require_once __DIR__ . '/recources/data.php';
             <div class="teams-box">
 
                 <div class="teams-logo">
-                    <img src=" <?= $team_info['logo'] ?> ">
+                    <img src=" <?= $team_info['logo'] ?> " alt=" <?= $team ?> ">
                 </div>
 
                 <h2>
