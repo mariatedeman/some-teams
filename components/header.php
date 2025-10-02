@@ -24,6 +24,7 @@
             <a href="/index.php">Start</a>
             <a href="/about.php">About</a>
         </nav>
+
     </div>
 
     <main>
