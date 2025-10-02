@@ -9,17 +9,30 @@ require_once __DIR__ . '/recources/data.php';
     <p>Presentation</p>
 </div>
 
-<div class="teams">
+<div class="teams-grid">
 
     <?php
-    foreach ($teams as $team) :
+    foreach ($teams as $team => $team_info) :
     ?>
 
-        <div>
-            <img src=" <?= $team['logo'] ?> ">
+        <div class="teams-box">
+
+            <div class="teams-logo">
+                <img src=" <?= $team_info['logo'] ?> ">
+            </div>
+
+            <h2>
+                <?= $team ?>
+            </h2>
+
             <h3>
-                <?= $team['city'] ?>
+                <?= $team_info['city'] ?>
             </h3>
+
+            <p>
+                Ranking: <?= $team_info['uefa-coefficient-ranking'] ?>
+            </p>
+
         </div>
 
     <?php
