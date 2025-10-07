@@ -21,6 +21,9 @@ require_once __DIR__ . '/recources/data.php';
         <!-- LOOPA DATA.PHP -->
         <?php
         foreach ($teams as $team => $team_info) :
+
+            $id = $team;
+
         ?>
 
             <!-- PRESENTATION CARDS -->
@@ -31,7 +34,7 @@ require_once __DIR__ . '/recources/data.php';
                 </div>
 
                 <h2>
-                    <?= $team ?>
+                    <?= $id . $team ?>
                 </h2>
 
                 <h3>
@@ -43,7 +46,7 @@ require_once __DIR__ . '/recources/data.php';
                 </p>
 
                 <!-- BUTTON -->
-                <a href="/about.php" class="button-primary">Learn more</a>
+                <a href="/teams-info.php?<?= $id ?>" class="button-primary">Learn more</a>
 
             </div>
 
