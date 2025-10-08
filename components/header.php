@@ -18,7 +18,7 @@
 
     <div class="header">
 
-        <img src="assets/logo-uwcl-white.webp">
+        <a href="/index.php"><img src="assets/logo-uwcl-white.webp"></a>
 
         <nav>
             <a href="/index.php">Start</a>

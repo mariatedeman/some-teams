@@ -34,19 +34,32 @@ require_once __DIR__ . '/recources/data.php';
                 </div>
 
                 <h2>
-                    <?= $id . $team ?>
+                    <?= $team ?>
                 </h2>
 
                 <h3>
                     <?= $team_info['city'] ?>
                 </h3>
 
+
+
+
+
+                <ul>
+                    <li>
+                        <?= $team_info['opponents']['0'] ?>
+                    </li>
+                </ul>
+
+
+
+
                 <p>
                     Ranking: <?= $team_info['uefa-coefficient-ranking'] ?>
                 </p>
 
                 <!-- BUTTON -->
-                <a href="/teams-info.php?<?= $id ?>" class="button-primary">Learn more</a>
+                <a href="/teams-info.php?id=<?= $id ?>" class="button-primary">Learn more</a>
 
             </div>
 

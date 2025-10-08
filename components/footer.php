@@ -1,7 +1,7 @@
 </main>
 
-<footer></footer>
+<footer>hej</footer>
 
 </body>
 
-</html
+</html>

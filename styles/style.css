@@ -54,13 +54,15 @@ p {
     margin: 5px;
 }
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: Manrope, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 5px;
 }
 
 
+
 /* --- LINKS --- */
+
 .button-primary {
     border: 2px solid;
     border-radius: 10px;
@@ -80,11 +82,34 @@ h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.button-secondary {
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: var(--light-grey);
+
+    padding: 15px 45px 15px 45px;
+    margin: 10px;
+    
+    color: var(--light-grey);
+    font-family: Manrope, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.button-secondary:hover {
+    background-color: var(--light-grey);
+    color: var(--primary-color);
+}
+
+
+
+
 /* --- LAYOUT --- */
 .one-clmn-grey {
     background-color: var(--light-grey);
     padding: 5rem;
 }
+
 
 /* --- PRESENTATION TEAMS --- */
 .teams-background {
@@ -150,6 +175,87 @@ h2, h3, h4, h5, h6 {
 }
 
 
+/* --- TEAMS-INFO ---*/
+
+.teams-presentation {
+    
+    padding: 50px;
+
+}
+
+.teams-presentation-logo {
+    max-height: 20%;
+    max-width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.teams-presentation-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.teams-presentation-header {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.teams-presentation-logo-text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.teams-presentation-text {
+    margin: 10px;
+
+    color: black;
+}
+
+.teams-presentation-button {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ----------------- */
+
+
+.opponents {
+    
+    background-image: url(/assets/teams-bg.avif);
+    background-size: cover;
+    padding: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.opponents-box {
+
+    background-color: white;
+    border-radius: 1rem;
+
+    margin: 20px;
+    padding: 8px;
+
+    width: 30%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+/* 
+
 @media only screen and (max-width: 600px) {
 
     .teams-box {
@@ -206,4 +312,4 @@ h2, h3, h4, h5, h6 {
     margin: 10px;
 
     }
-}
+} */
