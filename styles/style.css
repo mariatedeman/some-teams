@@ -105,9 +105,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* --- LAYOUT --- */
-.one-clmn-grey {
+.one-column-grey {
     background-color: var(--light-grey);
     padding: 5rem;
+    justify-items: center;
+}
+
+.one-column-text {
+    max-width: 70%;
+    text-align: center;
 }
 
 
@@ -183,16 +189,15 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.teams-presentation-logo {
+/* .teams-presentation-logo {
     max-height: 20%;
-    max-width: 20%;
+    max-width: 15%;
     display: flex;
     align-items: center;
-}
+} */
 
 .teams-presentation-logo img {
-    max-width: 100%;
-    max-height: 100%;
+    max-height: 200px;
 }
 
 .teams-presentation-header {
@@ -219,14 +224,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ----------------- */
+/* --- OPPONENTS --- */
 
 
 .opponents {
     
     background-image: url(/assets/teams-bg.avif);
     background-size: cover;
-    padding: 50px;
+    padding: 50px 10% 50px 10%;
 
     display: flex;
     flex-wrap: wrap;
@@ -242,14 +247,73 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px;
     padding: 8px;
 
-    width: 30%;
-    height: auto;
-
+    width: 25%;
+    max-height: 50%;
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 
+}
+
+.opponents-logo {
+
+    height: 30%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opponents-logo img {
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+
+/* --- ABOUT ME ---*/
+
+.heading-block {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/bkh-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100vw;
+    background-color: burlywood;
+    padding: 10%;
+}
+
+.heading-block-text {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.heading-block h1 {
+    font-size: 3rem;
+}
+
+.heading-block p {
+    max-width: 50%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.two-column {
+    display: flex;
+    align-items: center;
+}
+
+.two-column img {
+    width: 50vw;
+}
+
+.two-column-text {
+    margin: 15%;
 }
 
 

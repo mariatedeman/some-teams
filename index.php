@@ -41,19 +41,6 @@ require_once __DIR__ . '/recources/data.php';
                     <?= $team_info['city'] ?>
                 </h3>
 
-
-
-
-
-                <ul>
-                    <li>
-                        <?= $team_info['opponents']['0'] ?>
-                    </li>
-                </ul>
-
-
-
-
                 <p>
                     Ranking: <?= $team_info['uefa-coefficient-ranking'] ?>
                 </p>

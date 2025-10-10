@@ -30,7 +30,14 @@ $id = $_GET['id'];
                 </h1>
 
                 <p>
-                    <?= $teams[$id]["league"] ?>
+                    <?php
+
+                    $league = $teams[$id]["league"];
+                    $league = stripslashes($league);
+
+                    echo $league;
+
+                    ?>
                 </p>
 
             </div>
@@ -46,21 +53,29 @@ $id = $_GET['id'];
 
 </div>
 
-<!-- BAKGRUND -->
-<div class="opponents">
+<!-- BAKGRUNDSBILD -->
+<div class="opponents">ç
 
 
     <?php
 
+    //-- MAPPNING BAYERN MÜNICH
+    $opponent_name_map = [
+        'Bayern Münich' => 'Bayern Munich',
+    ];
+
+
     for ($i = 0; $i < count($teams[$id]['opponents']); $i++) :
 
-        $opponent_id = $teams[$id]['opponents'][$i] ?>
-
+        $opponent_id = $teams[$id]['opponents'][$i];
+        // Kolla efter mappning, annars använd original
+        $opponent_key = $opponent_name_map[$opponent_id] ?? $opponent_id;
+    ?>
 
         <div class="opponents-box">
 
-            <div class="teams-logo">
-                <img src=" <?= $teams[$opponent_id]['logo'] ?> ">
+            <div class="opponents-logo">
+                <img src=" <?= $teams[$opponent_key]['logo'] ?> ">
             </div>
 
             <h2>
@@ -68,21 +83,13 @@ $id = $_GET['id'];
             </h2>
 
             <!-- BUTTON -->
-            <a href="/teams-info.php?id=<?= $opponent_id ?>" class="button-primary">Learn more</a>
+            <a href="/teams-info.php?id=<?= $opponent_key ?>" class="button-primary">Learn more</a>
 
         </div>
 
     <?php endfor ?>
 
-
-
-
-
 </div>
-
-
-
-
 
 
 
