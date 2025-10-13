@@ -3,21 +3,20 @@
 require_once __DIR__ . '/components/header.php';
 require_once __DIR__ . '/recources/data.php';
 
+// --- GET ID FROM URL
 $id = $_GET['id'];
 
 ?>
 
-<!-- HEADER -->
+<!-- TEAMS PRESENTATION -->
 <div class="teams-presentation">
 
-
-    <!-- INNEHÅLL -->
     <div class="teams-presentation-header">
 
-        <!-- LOGGA OCH TEXT -->
+        <!-- LOGO AND TEXT -->
         <div class="teams-presentation-logo-text">
 
-            <!-- LOGGA -->
+            <!-- LOGO -->
             <div class="teams-presentation-logo">
                 <img src=" <?= $teams[$id]['logo'] ?> ">
             </div>
@@ -32,11 +31,18 @@ $id = $_GET['id'];
                 <p>
                     <?php
 
+                    // --- REMOVE SLASH FROM LEAGUE
                     $league = $teams[$id]["league"];
                     $league = stripslashes($league);
 
-                    echo $league;
+                    // --- FIRST CHARACTER UPPERCASE
+                    echo ucwords($league);
 
+                    ?>
+                </p>
+                <p class="uefa-ranking">
+                    <?php
+                    echo "Uefa ranking: " . $teams[$id]['uefa-coefficient-ranking'];
                     ?>
                 </p>
 
@@ -44,55 +50,63 @@ $id = $_GET['id'];
 
         </div>
 
-        <!-- KNAPP -->
+        <!-- BUTTON -->
         <div class="teams-presentation-button">
-            <a class="button-primary" href=" <?= $teams[$id]['url'] ?> " target="_blank"> Visit website </a>
+            <a class="button-primary" href=" <?= $teams[$id]['url'] ?> " target="_blank">Visit website</a>
         </div>
 
     </div>
 
 </div>
 
-<!-- BAKGRUNDSBILD -->
-<div class="opponents">ç
+<!-- OPPONENTS -->
 
+<!--- BACKGROUND IMAGE --->
+<div class="background-wave">
 
-    <?php
+    <h2 class="h2-white">Opponents</h2>
 
-    //-- MAPPNING BAYERN MÜNICH
-    $opponent_name_map = [
-        'Bayern Münich' => 'Bayern Munich',
-    ];
+    <div class="opponents">
 
+        <?php
 
-    for ($i = 0; $i < count($teams[$id]['opponents']); $i++) :
+        // --- MAPPING BAYERN MÜNICH
+        $opponent_name_map = [
+            'Bayern Münich' => 'Bayern Munich',
+        ];
 
-        $opponent_id = $teams[$id]['opponents'][$i];
-        // Kolla efter mappning, annars använd original
-        $opponent_key = $opponent_name_map[$opponent_id] ?? $opponent_id;
-    ?>
+        // --- CREATE ONE CARD PER OPPONENT
+        for ($i = 0; $i < count($teams[$id]['opponents']); $i++) :
 
-        <div class="opponents-box">
+            $opponent_id = $teams[$id]['opponents'][$i];
+            // --- SEARCH FOR MAPPING. IF NOT FOUND, USE ORIGINAL
+            $opponent_key = $opponent_name_map[$opponent_id] ?? $opponent_id;
+        ?>
 
-            <div class="opponents-logo">
-                <img src=" <?= $teams[$opponent_key]['logo'] ?> ">
+            <div class="opponents-box">
+
+                <div class="opponents-logo">
+                    <img src=" <?= $teams[$opponent_key]['logo'] ?> ">
+                </div>
+
+                <h2>
+                    <?= $teams[$id]['opponents'][$i] ?>
+                </h2>
+
+                <p class="uefa-ranking">
+                    Uefa ranking: <?= $teams[$opponent_key]['uefa-coefficient-ranking'] ?>
+                </p>
+
+                <!-- BUTTON -->
+                <a href="/teams-info.php?id=<?= $opponent_key ?>" class="button-primary">Learn more</a>
+
             </div>
 
-            <h2>
-                <?= $teams[$id]['opponents'][$i] ?>
-            </h2>
+        <?php endfor ?>
 
-            <!-- BUTTON -->
-            <a href="/teams-info.php?id=<?= $opponent_key ?>" class="button-primary">Learn more</a>
-
-        </div>
-
-    <?php endfor ?>
+    </div>
 
 </div>
-
-
-
 
 
 <?php

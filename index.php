@@ -5,12 +5,17 @@ require_once __DIR__ . '/recources/data.php';
 
 ?>
 
-<div>
-    <img class="header-img" src="/assets/champions-league-winners_q9l8bkoy.avif" alt="Arsenal celebrates their Champions League win 2025.">
-</div>
-
-<div class="one-clmn-grey">
-    <p>Presentation</p>
+<!-- HERO-IMG AND INTRO-TEXT -->
+<div class="heading-block-start">
+    <div class="heading-block-text">
+        <h1>UEFA Women’s Champions League 2025</h1>
+        <p>The new season of the UEFA Women’s Champions League is here,
+            bringing together Europe’s top clubs in the ultimate battle for glory.
+            From reigning champions to exciting newcomers, the group stage
+            features some of the best players and most competitive teams in the world.
+            Below, you can explore all the clubs participating in this year’s
+            edition and follow their journey towards the knockout rounds.</p>
+    </div>
 </div>
 
 <!-- PRESENTATION TEAMS -->
@@ -18,10 +23,11 @@ require_once __DIR__ . '/recources/data.php';
     <div class="teams-grid">
 
 
-        <!-- LOOPA DATA.PHP -->
+        <!-- LOOP DATA.PHP -->
         <?php
         foreach ($teams as $team => $team_info) :
 
+            // ID for URL
             $id = $team;
 
         ?>
@@ -41,8 +47,8 @@ require_once __DIR__ . '/recources/data.php';
                     <?= $team_info['city'] ?>
                 </h3>
 
-                <p>
-                    Ranking: <?= $team_info['uefa-coefficient-ranking'] ?>
+                <p class="uefa-ranking">
+                    Uefa ranking: <?= $team_info['uefa-coefficient-ranking'] ?>
                 </p>
 
                 <!-- BUTTON -->
@@ -54,15 +60,12 @@ require_once __DIR__ . '/recources/data.php';
         endforeach;
         ?>
     </div>
+
+    <div class="back-to-top">
+        <a href="/index.php"><img src="/assets/arrow-angle-pointing-up.svg"></a>
+    </div>
+
 </div>
-
-
-
-
-
-
-
-
 
 <?php
 
